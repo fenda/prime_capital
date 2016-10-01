@@ -1,0 +1,27 @@
+/*!
+ * Theme Name: Prime Capital
+ * Theme URI: http://primecapital.com
+ * Description: Wordpress custom made theme for Prime Capital
+ * Version: 1.0
+ * Author: Fenda
+ * Author URI: http://hypeberries.com.com
+ * Tags: Responsive, One page, modern, blog
+ *
+ * License: MIT
+ * License URI: http://opensource.org/licenses/mit-license.php
+ */
+
+// Modules
+@import "modules/variables";
+@import "modules/mixins";
+
+// Partials
+@import "partials/reset";
+@import "partials/wordpress";
+@import "partials/text";
+@import "partials/utils";
+@import "partials/main";
+@import "partials/header";
+@import "partials/footer";
+@import "partials/overwrites";
+@import "partials/print";

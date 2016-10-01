@@ -1,0 +1,23 @@
+section {padding:30px 0;}
+
+.prime-client {background:#e6e7ea;
+	&__container {display:flex; -webkit-flex-flow: row wrap; flex-flow: row wrap; justify-content: center;}
+	
+}
+.callout {display:flex; -webkit-flex-flow: row wrap; flex-flow: row wrap; justify-content: center; width:104%; margin-left:-2%;
+	.widget_sp_image {flex:0 0 31%; margin:0 1%;position:relative;
+		img {width:100%; height:auto;}
+	}
+	&__title {position:absolute; width:100%; background:$primary-color; color:#FFF; text-shadow: 0 0 7.4px rgba(1, 1, 1, 0.1); font-size:28px; font-weight:300; text-transform:uppercase;}
+}
+
+.blog {display:flex; -webkit-flex-flow: row wrap; flex-flow: row wrap; justify-content: center; width:104%; margin-left:-2%;}
+.post {position:relative; flex:0 0 31%; margin:0 1%; padding-bottom:90px;
+	&__title {
+		a {color:#000;}
+	}
+	p {font-size:14px; line-height:1.7;
+		a {display:none;}
+	}
+	&__button {position:absolute; bottom:0;}
+}

@@ -1,0 +1,19 @@
+*, *:after, *:before {box-sizing: border-box; -webkit-font-smoothing:antialiased; -moz-font-smoothing:antialiased; -o-font-smoothing:antialiased; text-rendering:optimizeSpeed;}
+
+html {font-size: 62.5%; -webkit-tap-highlight-color: rgba(0,0,0,0);}
+body {font-family: $font-family-base; font-size: $font-size-base; line-height: $line-height-base; font-weight:300; color: $text-color; background-color: $body-bg;}
+img {max-width: 100%; vertical-align: middle;}
+a {text-decoration:none; transition:.5s;
+  &:focus, &:hover {text-decoration: underline;}
+  &:hover {text-decoration:none;}
+
+}
+input[type="text"], input[type="search"] {font-size:inherit; line-height:inherit;}
+
+// Text selection
+::selection {background-color:$selection-bg; color:$body-bg; text-shadow:none;}
+
+::-webkit-input-placeholder {color:$gray;}
+::-moz-placeholder {color:$gray;}
+:-ms-input-placeholder {color:$gray;}
+:-moz-placeholder {color:$gray;}
