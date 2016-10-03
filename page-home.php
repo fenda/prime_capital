@@ -24,7 +24,7 @@
 		</section>
 		<section class="wrapper text--align-center">
 			<h1>From the PCR Blog</h1>
-			<div class="blog">
+			<div class="blog-section">
 				<?php
 					$args = array( 'numberposts' => 3 );
 					$postslist = get_posts( $args );

@@ -60,6 +60,12 @@ function html5blank_header_scripts() {
 		wp_register_script('modernizr', get_template_directory_uri() . '/js/lib/modernizr-2.7.1.min.js', array(), '2.7.1', false, true);
 		wp_enqueue_script('modernizr');
 
+		wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js', array(), '2.7.1', false, true);
+		wp_enqueue_script('jquery');
+
+		wp_register_script('parallax', get_template_directory_uri() . '/js/lib/parallax.min.js', array(), '2.7.1', false, true);
+		wp_enqueue_script('parallax');
+
 		wp_register_script('html5blankscripts', get_template_directory_uri() . '/js/scripts-min.js', array('jquery'), '1.0.0', false, true); 
 		wp_enqueue_script('html5blankscripts');
 	}
@@ -328,6 +334,14 @@ function pcr_button($atts, $content = null) {
 	return '<a href="'.$url.'" class="button">' . do_shortcode($content) . '</a>';
 }
 add_shortcode('button', 'pcr_button');
+
+function pcr_columns($atts, $content = null) {
+	extract( shortcode_atts( array(
+		'class' => '#'
+	), $atts ) );
+	return '<div class="columns columns__'.$class.'">' . do_shortcode($content) . '</div>';
+}
+add_shortcode('col', 'pcr_columns');
 
 
 // Properties post type

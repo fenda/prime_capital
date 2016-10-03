@@ -13,7 +13,9 @@ input[type="text"], input[type="search"] {font-size:inherit; line-height:inherit
 // Text selection
 ::selection {background-color:$selection-bg; color:$body-bg; text-shadow:none;}
 
-::-webkit-input-placeholder {color:$gray;}
-::-moz-placeholder {color:$gray;}
-:-ms-input-placeholder {color:$gray;}
-:-moz-placeholder {color:$gray;}
+::-webkit-input-placeholder {color:$text-placeholder$text-placeholder;}
+::-moz-placeholder {color:$text-placeholder;}
+:-ms-input-placeholder {color:$text-placeholder;}
+:-moz-placeholder {color:$text-placeholder;}
+
+b, strong {font-weight:700;}
