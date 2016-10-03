@@ -9,7 +9,7 @@ if (function_exists('add_theme_support')) {
 	//add_image_size('large', 700, '', true); // Large Thumbnail
 	//add_image_size('medium', 250, '', true); // Medium Thumbnail
 	add_image_size('small', 362, 267, '', true); // Small Thumbnail
-	//add_image_size('custom-size', 362, 200, true); // Custom Thumbnail Size call using the_post_thumbnail('custom-size');
+	add_image_size('property_slider', 562, 409, true); // Custom Thumbnail Size call using the_post_thumbnail('custom-size');
 
 	add_theme_support('automatic-feed-links');
 	load_theme_textdomain('html5blank', get_template_directory() . '/languages');
@@ -66,6 +66,9 @@ function html5blank_header_scripts() {
 		wp_register_script('parallax', get_template_directory_uri() . '/js/lib/parallax.min.js', array(), '2.7.1', false, true);
 		wp_enqueue_script('parallax');
 
+		wp_register_script('owlCarousel', get_template_directory_uri() . '/js/lib/owl.carousel.min.js', array(), false, true);
+		wp_enqueue_script('owlCarousel');
+
 		wp_register_script('html5blankscripts', get_template_directory_uri() . '/js/scripts-min.js', array('jquery'), '1.0.0', false, true); 
 		wp_enqueue_script('html5blankscripts');
 	}
@@ -78,6 +81,9 @@ function html5blank_styles() {
 
 	wp_register_style('html5blankcssmin', get_template_directory_uri() . '/style.css', array(), '1.0');
 	wp_enqueue_style('html5blankcssmin');
+
+	wp_register_style('owlCarousel', get_template_directory_uri() . '/css/lib/owl.carousel.css', array(), '1.0', 'all');
+	wp_enqueue_style('owlCarousel'); // Enqueue it!
 	
 }
 
@@ -381,3 +387,17 @@ function create_post_type_properties() {
 		) // Add Category and Post Tags support
 	));
 }
+
+function wp_get_attachment( $attachment_id ) {
+	$attachment = get_post( $attachment_id );
+	return array(
+		'alt' => get_post_meta( $attachment->ID, '_wp_attachment_image_alt', true ),
+		'caption' => $attachment->post_excerpt,
+		'description' => $attachment->post_content,
+		'href' => get_permalink( $attachment->ID ),
+		'src' => $attachment->guid,
+		'title' => $attachment->post_title
+	);
+}
+
+require_once ( get_stylesheet_directory() . '/theme-options.php' );

@@ -1,29 +1,23 @@
-<?php get_header(); ?>
-
+<?php
+	get_header(); 
+	$options = get_option('prime_capital_options');
+?>
+<div class="ft-image parallax-window" data-parallax="scroll" data-image-src="<?php echo $options['blog_img_url']; ?>"></div>
 	<main role="main">
-	<!-- section -->
 	<section>
-
+		<div class="wrapper clear">
+			<div class="text--align-center page__description page__description-blog">
+				<h1><?php the_title(); ?></h1>
+			</div>
 	<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
 		<!-- article -->
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-			<!-- post thumbnail -->
 			<?php if ( has_post_thumbnail()) : // Check if Thumbnail exists ?>
-				<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-					<?php the_post_thumbnail(); // Fullsize image for the single post ?>
-				</a>
+				<?php the_post_thumbnail(); // Fullsize image for the single post ?>
 			<?php endif; ?>
-			<!-- /post thumbnail -->
 
-			<!-- post title -->
-			<h1>
-				<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
-			</h1>
-			<!-- /post title -->
-
-			<!-- post details -->
 			<span class="date">
 				<time datetime="<?php the_time('Y-m-d'); ?> <?php the_time('H:i'); ?>">
 					<?php the_date(); ?> <?php the_time(); ?>
@@ -61,11 +55,9 @@
 		<!-- /article -->
 
 	<?php endif; ?>
-
+		</div>
 	</section>
 	<!-- /section -->
 	</main>
-
-<?php get_sidebar(); ?>
 
 <?php get_footer(); ?>

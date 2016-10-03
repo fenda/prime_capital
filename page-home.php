@@ -41,7 +41,7 @@
 				</div>
 			<?php endforeach; ?>
 			</div>
-			<a href="#" class="button">Read all blog posts</a>
+			<a href="<?php echo get_site_url(); ?>/blog/" class="button">Read all blog posts</a>
 		</section>
 	</main>
 <?php get_footer(); ?>
