@@ -16,10 +16,13 @@
 	align-items: center;
 	.widget_sp_image {margin:0 15px;
 		h2 {display:none;}
+		img {max-height:76px; width:auto;}
 	}
 }
 .copyright {border-top:1px solid #FFF; padding-top:20px; color:#FFF; font-size:14px;
 	a {color:#FFF;}
-	p {float:left;}
+	p {float:left;
+		a {color:$primary-color;}
+	}
 	.social-networks {float:right;}
 }

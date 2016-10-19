@@ -1,5 +1,5 @@
-<?php /*Template Name: Properties for Sale */ get_header(); ?>
-<?php query_posts('post_type=properties&post_status=publish&posts_per_page=9&category_name=properties-for-sale&paged='. get_query_var('paged')); ?>
+<?php /*Template Name: Properties Sold */ get_header(); ?>
+<?php query_posts('post_type=properties&post_status=publish&posts_per_page=9&category_name=sold-properties&paged='. get_query_var('paged')); ?>
 <?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );?>
 <div class="ft-image parallax-window" data-parallax="scroll" data-image-src="<?php echo $thumb['0'];?>"></div>
 <div class="wrapper text--align-center">

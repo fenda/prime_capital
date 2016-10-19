@@ -1,40 +1,24 @@
-<?php
-	get_header(); 
-	$options = get_option('prime_capital_options');
-?>
-<div class="ft-image parallax-window" data-parallax="scroll" data-image-src="<?php echo $options['blog_img_url']; ?>"></div>
+<?php /*Template Name: Promos */ get_header(); ?>
+<?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );?>
+<div class="ft-image parallax-window" data-parallax="scroll" data-image-src="<?php echo $thumb['0'];?>"></div>
+<div class="wrapper">
 	<main role="main">
-	<section>
-		<div class="wrapper clear">
-			<div class="text--align-center page__description page__description-blog">
+		<section class="clear">
+			<div class="text--align-center page__description">
 				<h1><?php the_title(); ?></h1>
 			</div>
+			
+
 		<?php if (have_posts()): while (have_posts()) : the_post(); ?>
-
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-				<?php if ( has_post_thumbnail()) : ?>
-					<div class="article__ft-image">
-						<?php the_post_thumbnail(); ?>
-					</div>
-				<?php endif; ?>
-
-				<p class="date">
-					<time datetime="<?php the_time('Y-m-d'); ?> <?php the_time('H:i'); ?>">
-						<?php the_date(); ?>
-					</time>
-				</p>
-
 				<?php the_content(); ?>
-
 			</article>
-
 		<?php endwhile; ?>
+
 		<?php else: ?>
-
 			<article>
-				<h1><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h1>
+				<h2><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h2>
 			</article>
-
 		<?php endif; ?>
 			<div class="sharing sharing--centered">
 				<ul class="sharing__list reset-box">
@@ -56,8 +40,7 @@
 					</li>
 				</ul>
 			</div>
-		</div>
-	</section>
+		</section>
 	</main>
-
+</div>
 <?php get_footer(); ?>

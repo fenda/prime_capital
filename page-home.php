@@ -4,6 +4,8 @@
 ?>
 
 	<?php if( function_exists('cyclone_slider') ) cyclone_slider('home'); ?>
+	<?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );?>
+	<div class="slider-alternative" style="background-image: url('<?php echo $thumb['0'];?>')"></div>
 	<main role="main">
 		<section class="page">
 			<div class="wrapper--narrow">
@@ -29,15 +31,15 @@
 					$args = array( 'numberposts' => 3 );
 					$postslist = get_posts( $args );
 					foreach ($postslist as $post) :  setup_postdata($post); ?> 
-				<div class="post">
+				<div class="post-item">
 					<?php if ( has_post_thumbnail()) : ?>
 						<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" class="post__image">
-							<?php the_post_thumbnail(); ?>
+							<?php the_post_thumbnail('property_slider'); ?>
 						</a>
 					<?php endif; ?>
-					<h2 class="post__title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-					<p><?php html5wp_excerpt('html5wp_index') ?></p>
-					<a href="<?php the_permalink(); ?>" class="post__button button button--green">Read more</a>
+					<h2 class="post-item__title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+					<?php html5wp_excerpt('html5wp_index') ?>
+					<a href="<?php the_permalink(); ?>" class="post-item__button button button--green">Read more</a>
 				</div>
 			<?php endforeach; ?>
 			</div>

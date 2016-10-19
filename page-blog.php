@@ -10,6 +10,7 @@
 			</div>
 			<div class="blog-section">
 				<?php get_template_part('loop'); ?>
+				<hr class="not_visible">
 				<?php get_template_part('pagination'); ?>
 			</div>
 

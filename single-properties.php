@@ -15,12 +15,11 @@
 					<div class="columns columns__fifty">	
 						<?php if ( has_post_thumbnail()) : ?>
 							<div class="property-thumb">
-								<?php //the_post_thumbnail(); ?>
 								<?php
 									$args = array(
 										'post_parent' => $post->ID,
 										'post_type' => 'attachment',
-										'orderby' => 'menu_order',
+										'orderby' => 'date',
 										'order' => 'ASC',
 										'numberposts' => 25,
 										'post_mime_type' => 'image'
@@ -40,10 +39,13 @@
 						<div class="property-map">
 							<?php echo GeoMashup::map('height=400&zoom=13&add_overview_control=false&add_map_type_control=false');?>
 						</div>
+						<?php if ( in_category('properties-for-sale') ) { ?>
 						<div class="property-form">
 							<h2 class="property-form__title text--align-center">Inquire About This Property</h2>
 							<?php echo do_shortcode( '[contact-form-7 id="67" title="Property Enquiry"]' ); ?>
 						</div>
+						<?php } ?>
+						
 					</div>
 					<div class="columns columns__fifty padding-l-40">
 						<div class="custom-fields">
@@ -60,6 +62,8 @@
 						<div class="property-description">
 							<?php the_content(); ?>
 						</div>
+						<?php if ( in_category('properties-for-sale') ) { ?>
+
 						<div class="sharing">
 							<ul class="sharing__list reset-box">
 								<li class="sharing__item sharing__item--title"><i class="fa fa-share-square-o" aria-hidden="true"></i> Share</li>
@@ -81,6 +85,7 @@
 							</ul>
 						</div>
 					</div>
+					<?php } ?>
 				</article>
 			<?php endwhile; ?>
 			<?php else: ?>

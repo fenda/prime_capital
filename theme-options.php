@@ -55,6 +55,24 @@ function theme_options_do_page() {
 				</tr>
 			</table>
 
+			<h3>Social Networks</h3>
+			<table class="form-table">
+				<tr valign="top"><th scope="row"><?php _e( 'Facebook', 'prime_capital' ); ?></th>
+					<td>
+						<input id="prime_capital_options[facebook_url]" class="regular-text" type="text" name="prime_capital_options[facebook_url]" value="<?php esc_attr_e( $options['facebook_url'] ); ?>" />
+					</td>
+				</tr>
+				<tr valign="top"><th scope="row"><?php _e( 'Instagram', 'prime_capital' ); ?></th>
+					<td>
+						<input id="prime_capital_options[instagram_url]" class="regular-text" type="text" name="prime_capital_options[instagram_url]" value="<?php esc_attr_e( $options['instagram_url'] ); ?>" />
+					</td>
+				</tr>
+				<tr valign="top"><th scope="row"><?php _e( 'Twitter', 'prime_capital' ); ?></th>
+					<td>
+						<input id="prime_capital_options[twitter_url]" class="regular-text" type="text" name="prime_capital_options[twitter_url]" value="<?php esc_attr_e( $options['twitter_url'] ); ?>" />
+					</td>
+				</tr>
+			</table>
 
 			<p class="submit">
 				<input type="submit" class="button-primary" value="<?php _e( 'Save Options', 'prime_capital' ); ?>" />

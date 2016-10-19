@@ -1,3 +1,4 @@
+<?php $options = get_option('prime_capital_options'); ?>
 <!doctype html>
 <html <?php language_attributes(); ?> class="no-js">
 	<head>
@@ -10,7 +11,7 @@
 		<link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?>" href="<?php bloginfo('rss2_url'); ?>" />
 
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="description" content="<?php bloginfo('description'); ?>">
 
 		<?php wp_head(); ?>
@@ -29,12 +30,20 @@
 					<div class="social-networks header__widget">
 						<p class="header__widget__title">Follow Us:</p>
 						<ul class="social-networks__list reset-box">
-							<li class="social-networks__item"><a href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
-							<li class="social-networks__item"><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-							<li class="social-networks__item"><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+							<li class="social-networks__item"><a href="<?php echo $options['facebook_url']; ?>" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
+							<li class="social-networks__item"><a href="<?php echo $options['instagram_url']; ?>" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+							<li class="social-networks__item"><a href="<?php echo $options['twitter_url']; ?>" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
 						</ul>
 					</div>
 				</div>
+				<a class="mobile_nav">
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+				</a>
 				<nav class="menu" role="navigation">
 					<?php html5blank_nav(); ?>
 				</nav>

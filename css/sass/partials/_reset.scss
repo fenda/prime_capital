@@ -2,7 +2,7 @@
 
 html {font-size: 62.5%; -webkit-tap-highlight-color: rgba(0,0,0,0);}
 body {font-family: $font-family-base; font-size: $font-size-base; line-height: $line-height-base; font-weight:300; color: $text-color; background-color: $body-bg;}
-img {max-width: 100%; vertical-align: middle;}
+img {max-width: 100%; vertical-align: middle; height:auto;}
 a {text-decoration:none; transition:.5s;
   &:focus, &:hover {text-decoration: underline;}
   &:hover {text-decoration:none;}

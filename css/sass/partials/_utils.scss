@@ -6,6 +6,7 @@
 	&:after {clear:both;}
 }
 .reset-box {@include reset-box;}
+.not_visible {width:100%; border:none;}
 
 .social-networks {float:left;
 	.header__widget__title {margin-top:10px;}
@@ -18,3 +19,6 @@
 }
 
 .padding-l-40 {padding-left:40px;}
+.padding-r-40 {padding-right:40px;}
+
+.wpcf7-recaptcha {display:inline-block;}
