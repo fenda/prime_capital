@@ -33,6 +33,7 @@
 					</article>
 
 				<?php endif; ?>
+				<hr class="not_visible">
 				<?php get_template_part('pagination'); ?>
 			</div>
 

@@ -25,7 +25,9 @@
 				</p>
 
 				<?php the_content(); ?>
-
+				<div class="tags">
+					<?php the_tags( __( 'Tags: ', 'html5blank' ), ' '); ?>
+				</div>
 			</article>
 
 		<?php endwhile; ?>

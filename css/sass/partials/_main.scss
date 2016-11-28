@@ -102,3 +102,6 @@ article hr {margin:20px 0; display:inline-block; width:100%;}
 
 .article__ft-image {float:left; max-width:50%; margin-right:40px; margin-bottom:25px;}
 .date {font-size:.8em;}
+
+// tags
+.tags a {background:$primary-color; padding:4px 6px; color:#FFF; font-weight:600; margin:0 2px; line-height:2; letter-spacing:-.05em; font-size:.8em;}
